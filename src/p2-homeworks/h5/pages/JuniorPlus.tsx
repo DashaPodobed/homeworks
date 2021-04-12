@@ -1,11 +1,9 @@
-
 import React from "react";
 
 function Junior_Plus() {
     return (
         <div>
-
-
+            Junior Plus
         </div>
     )
 }

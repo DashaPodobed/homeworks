@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    width: 280px;
+    transition-duration: 500ms;
+    transform: translate(-200px);
+}
+
+.link {
+    padding: 5px;
+    color: #2c4c9b;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rosybrown;
+    text-decoration: underline;
+}
+
+.header .activeLink {
+    color: rosybrown;
+}
+
+.block {
+    width: 15px;
+    height: 15px;
+    margin: 7px;
+    background: #f8bdbd;
+}
+
+.header:hover {
+    transition-duration: 500ms;
+    transform: translate(0px);
+}
