@@ -18,15 +18,16 @@ test("sort name up", () => {
     const newState = homeWorkReducer(initialState, {type: "sort", payload: "up"});
 
     console.log(newState);
-    // expect(...).toBe(...);
+    expect(initialState[0]._id).toBe(1);
 });
 test("sort name down", () => {
     const newState = homeWorkReducer(initialState, {type: "sort", payload: "down"});
-
+    console.log(newState)
+    expect(initialState[0]._id).toBe(0)
 
 });
 test("check age 18", () => {
     const newState = homeWorkReducer(initialState, {type: "check", payload: 18});
-
-
+    console.log(newState)
+    expect(newState.length).toBe(4)
 });

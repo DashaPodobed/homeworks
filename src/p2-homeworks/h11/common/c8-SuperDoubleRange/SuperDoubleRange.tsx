@@ -1,24 +1,42 @@
 import React from "react";
+import {makeStyles, Slider, Typography} from "@material-ui/core";
 
-type SuperDoubleRangePropsType = {
-    onChangeRange?: (value: [number, number]) => void
-    value?: [number, number]
-    // min, max, step, disable, ...
+type SuperDoubleRange = {
+    value: number[]
+    onChangeSuperDoubleRange: (event: any, newValue: number | number[]) => void
 }
-
-const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
+const SuperDoubleRange: React.FC<SuperDoubleRange> = (
     {
-        onChangeRange, value,
-        // min, max, step, disable, ...
+        value,
+        onChangeSuperDoubleRange
+
     }
 ) => {
-    // сделать самому, можно подключать библиотеки
+    const useStyles = makeStyles({
+        root: {
+            width: 300,
+        },
+    });
+
+    const classes = useStyles();
+
+    function valuetext(value: number) {
+        return `${value}°C`;
+    }
 
     return (
-        <>
-            DoubleRange
-        </>
-    );
-}
 
-export default SuperDoubleRange;
+        <div className={classes.root}>
+            <Typography id="range-slider" gutterBottom>
+            </Typography>
+            <Slider
+                value={value}
+                onChange={onChangeSuperDoubleRange}
+                valueLabelDisplay="auto"
+                aria-labelledby="range-slider"
+                getAriaValueText={valuetext}
+            />
+        </div>
+    )
+}
+export default SuperDoubleRange

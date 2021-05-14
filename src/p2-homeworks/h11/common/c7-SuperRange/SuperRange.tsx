@@ -13,7 +13,8 @@ type SuperRangePropsType = DefaultInputPropsType & { // и + ещё пропсы
 const SuperRange: React.FC<SuperRangePropsType> = (
     {
         type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
-        onChange, onChangeRange,
+        onChange,
+        onChangeRange,
         className,
 
         ...restProps// все остальные пропсы попадут в объект restProps
